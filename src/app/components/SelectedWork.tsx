@@ -12,14 +12,14 @@ const projects = [
     description: "Luxury commercial cleaning platform with a custom estimation engine.",
     tech: "Next.js // Tailwind",
     image: "/kootneayfreshcleaning.png",
-    link: "https://kootenayfreshcleaning.ca/" // Added the real link
+    link: "https://kootenayfreshcleaning.ca/" 
   },
   {
     title: "Barber SaaS",
     description: "A high-end management suite for modern grooming studios.",
     tech: "Next.js // MongoDB // Auth",
     image: "/barber.png",
-    link: "#" // Placeholder link for you to update later
+    link: "" // Empty string will now safely do nothing
   }
 ];
 
@@ -60,12 +60,15 @@ const SelectedWork: React.FC = () => {
             
             <div className="w-full max-w-[1920px] mx-auto flex flex-col md:flex-row items-center gap-12 lg:gap-24">
               
-              {/* LEFT SIDE: The Image (Now wrapped in an anchor tag) */}
+              {/* LEFT SIDE: The Image */}
               <a 
-                href={project.link}
-                target={project.link !== "#" ? "_blank" : "_self"}
-                rel="noopener noreferrer"
-                className="w-full md:w-[55%] h-[45vh] md:h-[60vh] lg:h-[65vh] relative group bg-[#1C1A18] border border-[#2A2826]/50 p-4 flex items-center justify-center overflow-hidden shadow-2xl cursor-pointer"
+                href={project.link || undefined}
+                target={project.link ? "_blank" : "_self"}
+                rel={project.link ? "noopener noreferrer" : undefined}
+                onClick={(e) => {
+                  if (!project.link) e.preventDefault();
+                }}
+                className={`w-full md:w-[55%] h-[45vh] md:h-[60vh] lg:h-[65vh] relative group bg-[#1C1A18] border border-[#2A2826]/50 p-4 flex items-center justify-center overflow-hidden shadow-2xl ${project.link ? 'cursor-pointer' : 'cursor-default'}`}
               >
                 <img 
                   src={project.image} 
@@ -88,14 +91,17 @@ const SelectedWork: React.FC = () => {
                   Selected Work
                 </div>
                 
-                {/* Title (Now wrapped in an anchor tag) */}
+                {/* Title */}
                 <a 
-                  href={project.link}
-                  target={project.link !== "#" ? "_blank" : "_self"}
-                  rel="noopener noreferrer"
-                  className="block w-fit"
+                  href={project.link || undefined}
+                  target={project.link ? "_blank" : "_self"}
+                  rel={project.link ? "noopener noreferrer" : undefined}
+                  onClick={(e) => {
+                    if (!project.link) e.preventDefault();
+                  }}
+                  className={`block w-fit ${project.link ? 'cursor-pointer' : 'cursor-default'}`}
                 >
-                  <h2 className="font-cormorant text-5xl md:text-6xl lg:text-7xl text-[#EBE5D9] leading-[0.9] mb-8 tracking-tight transition-colors duration-500 hover:text-[#CBA365] cursor-pointer">
+                  <h2 className={`font-cormorant text-5xl md:text-6xl lg:text-7xl text-[#EBE5D9] leading-[0.9] mb-8 tracking-tight transition-colors duration-500 ${project.link ? 'hover:text-[#CBA365]' : ''}`}>
                     {project.title}.
                   </h2>
                 </a>
@@ -109,12 +115,15 @@ const SelectedWork: React.FC = () => {
                     {project.tech}
                   </span>
                   
-                  {/* Circular Arrow Button (Now an anchor tag) */}
+                  {/* Circular Arrow Button */}
                   <a 
-                    href={project.link}
-                    target={project.link !== "#" ? "_blank" : "_self"}
-                    rel="noopener noreferrer"
-                    className="w-12 h-12 rounded-full border border-[#CBA365]/30 flex items-center justify-center text-[#CBA365] transition-all hover:bg-[#CBA365] hover:text-[#12110F] cursor-pointer shadow-lg hover:shadow-[#CBA365]/20"
+                    href={project.link || undefined}
+                    target={project.link ? "_blank" : "_self"}
+                    rel={project.link ? "noopener noreferrer" : undefined}
+                    onClick={(e) => {
+                      if (!project.link) e.preventDefault();
+                    }}
+                    className={`w-12 h-12 rounded-full border border-[#CBA365]/30 flex items-center justify-center text-[#CBA365] transition-all shadow-lg ${project.link ? 'hover:bg-[#CBA365] hover:text-[#12110F] cursor-pointer hover:shadow-[#CBA365]/20' : 'opacity-30 cursor-default'}`}
                     aria-label={`View ${project.title} project`}
                   >
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
