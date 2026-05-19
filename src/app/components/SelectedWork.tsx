@@ -19,8 +19,16 @@ const projects = [
     description: "A high-end management suite for modern grooming studios.",
     tech: "Next.js // MongoDB // Auth",
     image: "/barber.png",
-    link: "" // Empty string will now safely do nothing
+    link: "https://github.com/dawindergazipuriaaa/barbersaas.git" 
+  },
+  {
+    title: "Premium QR Code Generator",
+    description: "A fast, customizable web app for generating high-resolution, brand-specific QR codes instantly with dynamic color, pattern, and logo support.",
+    tech: "Next.js // Tailwind",
+    image: "/freeqrcode.png", 
+    link: "https://freeqrcode-three.vercel.app/"
   }
+   
 ];
 
 const SelectedWork: React.FC = () => {

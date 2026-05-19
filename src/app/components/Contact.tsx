@@ -89,7 +89,7 @@ const Contact: React.FC = () => {
             LinkedIn
           </Link>
           <Link 
-            href="https://github.com/yourusername" 
+            href="https://github.com/dawindergazipuriaaa" 
             target="_blank" 
             rel="noopener noreferrer"
             className="font-manrope text-xs tracking-widest uppercase text-[#ECE8E1] transition-colors duration-300 hover:text-[#CBA365]"
