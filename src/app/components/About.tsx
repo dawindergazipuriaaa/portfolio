@@ -140,7 +140,7 @@ const About: React.FC = () => {
 
               <div className="overflow-hidden">
                 <p ref={addToTextRefs}>
-                  Today, I focus on the modern web stack—Next.js, React, and GSAP—to craft digital experiences that demand attention. When I'm not pushing pixels or optimizing database queries, I'm likely researching new tech for my next deploymen.
+                  Today, I focus on the modern web stack—Next.js, React, and GSAP—to craft digital experiences that demand attention. When I'm not pushing pixels or optimizing database queries, I'm likely researching new tech for my next deployment.
                 </p>
               </div>
             </div>
